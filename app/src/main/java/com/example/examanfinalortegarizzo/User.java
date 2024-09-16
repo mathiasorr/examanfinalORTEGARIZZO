@@ -1,9 +1,8 @@
 package com.example.examanfinalortegarizzo;
 
 import java.io.Serializable;
-import java.util.List;
 
- public class User implements Serializable {
+public class User implements Serializable {
     public Name name;
     public String email;
     public Picture picture;
@@ -12,9 +11,6 @@ import java.util.List;
     public String cell;
     public String nat;
 
-    public class UserResponse {
-         public List<User> results;
-     }
     public static class Name implements Serializable {
         public String first;
         public String last;
@@ -45,4 +41,3 @@ import java.util.List;
         public String longitude;
     }
 }
-

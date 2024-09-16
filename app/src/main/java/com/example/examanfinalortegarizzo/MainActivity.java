@@ -1,6 +1,5 @@
 package com.example.examanfinalortegarizzo;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     List<User> users = response.body().results;
-                    userAdapter = new UserAdapter(users, new UserAdapter.OnItemClickListener() {
-                        @Override
+                    userAdapter = new UserAdapter(users,new UserAdapter.OnItemClickListener()  {
                         public void onItemClick(User user) {
-                            Intent intent = new Intent(MainActivity.this, UserDetailsActivity.class);
+                            Intent intent = new Intent(MainActivity.this,
+                                    UserDetailsActivity.class);
                             intent.putExtra("user", user);
                             startActivity(intent);
                         }
@@ -55,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
-
             }
         });
     }

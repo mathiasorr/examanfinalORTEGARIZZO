@@ -67,7 +67,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
                     .circleCrop()
                     .into(imageView);
 
-            itemView.setOnClickListener(v -> listener.onItemClick(user));
+            itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick(user);
+                }
+            });
         }
     }
 }
